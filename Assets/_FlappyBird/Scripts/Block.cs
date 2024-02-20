@@ -1,12 +1,18 @@
+using GameTool;
 using UnityEngine;
 
-public class Block : MonoBehaviour
+public class Block : BasePooling
 {
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnEnable()
     {
-        if (other.gameObject.CompareTag("Player"))
+        Disable(10f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))
         {
-            Debug.Log("Collided With Bird");
+            other.gameObject.SetActive(false);
         }
     }
 }

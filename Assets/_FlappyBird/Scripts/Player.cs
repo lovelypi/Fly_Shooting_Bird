@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Block"))
         {
-            Debug.Log("Collided With Square");
+            
         }
     }
 }
