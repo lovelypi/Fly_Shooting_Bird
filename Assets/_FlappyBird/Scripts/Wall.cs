@@ -29,9 +29,13 @@ public class Wall : BasePooling
 
         for (int i = 0; i < 4; i++)
         {
+            var blockType = (BlockType)Random.Range(0, 3);
             var position = transform.position;
             var block = (Block)PoolingManager.Instance.GetObject(NamePrefabPool.Block, 
                 transform, new Vector3(position.x, posY[i], position.z));
+            
+            block.blockType = blockType;
+            block.SetData();
             SpriteRenderer sr = block.gameObject.GetComponent<SpriteRenderer>();
             sr.size = new Vector2(1, height[i]);
             
