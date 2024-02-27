@@ -7,7 +7,9 @@ public class Player : MonoBehaviour
     private float jumpForce = 20f;
     public float cooldown;
     public float timeShoot = 2.0f;
-    
+    public float boundTop = 4.33f;
+    public float boundBottom = -4.5f;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -19,6 +21,16 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             rb.velocity = new Vector2(0, jumpForce);
+        }
+
+        Vector2 pos = transform.position;
+        if (transform.position.y >= boundTop)
+        {
+            transform.position = new Vector2(pos.x, boundTop);
+        }
+        else if (pos.y <= boundBottom)
+        {
+            transform.position = new Vector2(pos.x, boundBottom);
         }
 
         cooldown -= Time.deltaTime;
@@ -33,7 +45,6 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Block"))
         {
-            
         }
     }
 }

@@ -1,8 +1,5 @@
-using System;
 using GameTool;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
-using Random = UnityEngine.Random;
 
 public class Wall : BasePooling
 {

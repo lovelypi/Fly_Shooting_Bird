@@ -13,14 +13,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        cooldown -= Time.deltaTime;
+        
         if (cooldown <= 0)
         {
             cooldown = spawnTime;
             PoolingManager.Instance.GetObject(NamePrefabPool.Wall, position: new Vector3(5f, 0f, 0f)).Disable(10f);
-        }
-        else
-        {
-            cooldown -= Time.deltaTime;
         }
     }
 }
