@@ -4,8 +4,7 @@ namespace GameTool
     {
         public static void SaveAllData()
         {
-            GameData.Instance.SaveData(eData.Diamond, GameData.Instance.Data.Diamond);
-            GameData.Instance.SaveData(eData.Gold, GameData.Instance.Data.Gold);
+            GameData.Instance.SaveData(eData.highestScore, GameData.Instance.Data.highestScore);
             GameData.Instance.SaveData(eData.MuteAll, GameData.Instance.Data.MuteAll);
             GameData.Instance.SaveData(eData.PushAlarm, GameData.Instance.Data.PushAlarm);
             GameData.Instance.SaveData(eData.SoundFX, GameData.Instance.Data.SoundFX);
@@ -15,8 +14,7 @@ namespace GameTool
 
         public static void LoadAllData()
         {
-            GameData.Instance.LoadData(eData.Diamond, ref GameData.Instance.Data.Diamond);
-            GameData.Instance.LoadData(eData.Gold, ref GameData.Instance.Data.Gold);
+            GameData.Instance.LoadData(eData.highestScore, ref GameData.Instance.Data.highestScore);
             GameData.Instance.LoadData(eData.MuteAll, ref GameData.Instance.Data.MuteAll);
             GameData.Instance.LoadData(eData.PushAlarm, ref GameData.Instance.Data.PushAlarm);
             GameData.Instance.LoadData(eData.SoundFX, ref GameData.Instance.Data.SoundFX);

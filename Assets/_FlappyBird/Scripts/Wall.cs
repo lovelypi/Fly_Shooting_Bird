@@ -44,6 +44,7 @@ public class Wall : BasePooling
             boxCollider2D.offset = Vector2.zero;
         }
     }
+    
 
     private void Update()
     {

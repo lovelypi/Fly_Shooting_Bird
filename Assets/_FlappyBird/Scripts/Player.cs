@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        AudioManager.Instance.PlayMusic(eMusicName.Game);
         cooldown = timeShoot;
     }
 
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            AudioManager.Instance.Shot(eSoundName.Jump);
             rb.velocity = new Vector2(0, jumpForce);
         }
 
