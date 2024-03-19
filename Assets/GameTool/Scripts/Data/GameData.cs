@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using GameTool;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ public class GameData : SingletonMonoBehaviour<GameData>
 
     public BlockData blockData;
     public BulletData bulletData;
+
+    public List<RuntimeAnimatorController> listAnimators;
 
     public int score = 0;
     
@@ -118,11 +121,22 @@ public class GameData : SingletonMonoBehaviour<GameData>
             SaveData(eData.highestScore, HighestScore);
         }
     }
+
+    public int ID
+    {
+        get => Data.id;
+        set
+        {
+            Data.id = value;
+            SaveData(eData.id, ID);
+        }
+    }
 }
 
 [Serializable]
 public class GameDataSave
 {
+    public int id;
     public int highestScore;
     public bool MuteAll;
     public bool PushAlarm = true;

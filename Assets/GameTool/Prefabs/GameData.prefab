@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data:
+    id: 0
     highestScore: 0
     MuteAll: 0
     PushAlarm: 1
@@ -52,4 +53,9 @@ MonoBehaviour:
     Vibration: 1
   blockData: {fileID: 11400000, guid: 2c24dac9299deb549a2b77c68ecdfb2a, type: 2}
   bulletData: {fileID: 11400000, guid: e4123269c669e94489635afcd33466ee, type: 2}
+  listAnimators:
+  - {fileID: 9100000, guid: f71ac61b374559e41b4f9a703f60e228, type: 2}
+  - {fileID: 9100000, guid: cdcf1232c183e0c42ae6d4f06f59bcd0, type: 2}
+  - {fileID: 9100000, guid: f7cbeb6c7b88179409f76cd42c74c998, type: 2}
+  - {fileID: 9100000, guid: 32c0fab6daa9bef43921c61fc9b3358a, type: 2}
   score: 0

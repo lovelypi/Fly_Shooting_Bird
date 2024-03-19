@@ -4,6 +4,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Animator anim;
     private float jumpForce = 20f;
     public float cooldown;
     public float timeShoot = 2.0f;
@@ -13,6 +14,9 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        anim.runtimeAnimatorController = 
+            GameData.Instance.listAnimators[GameData.Instance.ID];
         AudioManager.Instance.PlayMusic(eMusicName.Game);
         cooldown = timeShoot;
     }
